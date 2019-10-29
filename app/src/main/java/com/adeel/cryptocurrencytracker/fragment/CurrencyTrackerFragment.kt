@@ -29,9 +29,6 @@ class CurrencyTrackerFragment : Fragment() {
         cryptoCurrencyViewModel =
             ViewModelProvider.AndroidViewModelFactory(Application()).create(CryptoCurrencyVM::class.java)
 
-        rvCryptocurrency.layoutManager = LinearLayoutManager(activity)
-        rvCryptocurrency.adapter = adapter
-
         getCryptoCurrencyData()
 
         swipeRefresh.setOnRefreshListener {
@@ -57,6 +54,7 @@ class CurrencyTrackerFragment : Fragment() {
             ).show()
         })
 
+        rvCryptocurrency.layoutManager = LinearLayoutManager(activity)
         rvCryptocurrency.adapter = adapter
     }
 }
