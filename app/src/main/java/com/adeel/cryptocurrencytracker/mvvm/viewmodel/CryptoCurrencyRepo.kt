@@ -8,7 +8,6 @@ import kotlinx.coroutines.*
 import retrofit2.HttpException
 
 class CryptoCurrencyRepo() {
-    private var cryptoCurrency = mutableListOf<CryptoCurrency>()
     private var mutableCryptoCurrency = MutableLiveData<CryptoCurrency>()
     val completeJob = Job()
     private val coroutineScope = CoroutineScope(Dispatchers.IO + completeJob)
